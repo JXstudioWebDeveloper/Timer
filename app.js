@@ -11,7 +11,7 @@ const clearBtn = document.getElementById('clear');
 startBtn.addEventListener('click', () => {
   interval = setInterval(() => {
     count++;
-    if (count >= 59) {
+    if (count >= 99) {
       minut++;
       count = 0;
       minutText.innerHTML = minut;
@@ -21,7 +21,7 @@ startBtn.addEventListener('click', () => {
       hourText.innerHTML = hour;
     }
     countText.innerHTML = count;
-  }, 1000);
+  }, 10);
 });
 stopBtn.addEventListener('click', () => {
   clearInterval(interval);
@@ -29,8 +29,11 @@ stopBtn.addEventListener('click', () => {
 clearBtn.addEventListener('click', () => {
   count = 0;
   minut = 0;
+  hour = 0;
   minutText.innerHTML = minut;
   countText.innerHTML = count;
+  hourText.innerHTML = hour;
+
   clearInterval(interval);
 });
 const hour2Text = document.getElementById('hour2');
